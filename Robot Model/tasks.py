@@ -169,18 +169,13 @@ power_mc = MCSkill("power", "mc", "power", "wire")
 # * (skill 30) How to connect the signal on the MC
 signal_mc = MCSkill("signal", "mc", "signal", "wire")
 
-# * (skill 31) How to use the trigger on the MC
-trigger_mc_motor = MCSkill("trigger", "mc", "trigger", "motor")
-
-# * (skill 32) How to use the hold on the MC
-hold_mc_button = MCSkill("hold", "mc", "hold", "button") 
 
 
 
 #------------------------------------------------------------------
 ## Closing skills
 
-# * (skill 33) That the circuit should be a circuit
+# * (skill 31) That the circuit should be a circuit
 closed_circuit = ClosingSkill("simple_closed", "closing")
 
 >>>>>>> 44c36a83016f5b562cbe5f27f7854b0e41ee5eb1
