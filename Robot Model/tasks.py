@@ -155,8 +155,8 @@ sk_dir_led = DirectionSkill("led_direc", "led")
 # * (skill 14) How to power an MC
 power_mc = MCSkill("power", "mc", "power", "wire")
 
-# * (skill 15) How to change the signal on the FM
-signal_fm = MCSkill("signal", "FM", "signal", "FM")
+# * (skill 15) How to power an FM
+power_fm = MCSkill("power", "FM", "power", "wire")
 
 # * (skill 16) How to change the signal on the FM
 signal_fm = MCSkill("signal", "fm", "signal", "wire")
@@ -243,28 +243,24 @@ task17 = Task(17,"mc_le_re", ["mc", "led", "reed"], [],
 		"Build a circuit that blinks a light in the rythm of a song when a reed switch is turned on")
 
 
-
-
-
-
 #--------------
 task18 = Task(18,"fm_sp", ["fm", "speaker"], [],
-	    [0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1 ],
+	    [0, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 0, 0, 1, 1, 1 ],
 		"Build a circuit that that you can listen to the FM radio via the Speaker")
 #--------------
 task19 = Task(18,"fm_sp_sw", ["fm", "speaker","switch"], [],
-	    [0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1 ],
-		"Build a circuit that that you can listen to the FM radio via the Speaker and off using a switch")
-task20 = Task(20,"fm_sp_re", ["fm", "speaker","reed"], [],
-	    [0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1 ],
+	    [0, 1, 0, 1, 0, 0, 0, 1, 1, 0, 0, 1, 0, 0, 1, 1, 1 ],
+		"Build a circuit that that you can listen to the FM radio via the Speaker when a switch is turned on")
+task20 = Task(20,"fm_sp_bu", ["fm", "speaker","button"], [],
+	    [0, 1, 0, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 0, 1, 1, 1 ],
 		"Build a circuit that that you can listen to the FM radio via the Speaker when a button is pressed")
 task21 = Task(21,"fm_buz", ["fm", "buzzrer"], [],
-	    [0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1 ],
+	    [0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 1, 1 ],
 		"Build a circuit that that you can listen to the FM radio via the buzzrer")
 #--------------
 task22 = Task(22,"fm_buz_sw", ["fm", "buzzrer","switch"], [],
-	    [0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1 ],
-		"Build a circuit that that you can listen to the FM radio via the buzzrer and off using a switch")
-task23 = Task(23,"fm_buz_re", ["fm", "buzzrer","reed"], [],
-	    [0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1 ],
+	    [0, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 1, 1 ],
+		"Build a circuit that that you can listen to the FM radio via the buzzrer when a switch is turned on")
+task23 = Task(23,"fm_buz_bu", ["fm", "buzzrer","button"], [],
+	    [0, 1, 1, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 1, 1, 1 ],
 		"Build a circuit that that you can listen to the FM radio via the buzzrer when a button is pressed")
