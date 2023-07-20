@@ -65,7 +65,10 @@ sk_FM = PieceSkill("FM", "piece","FM")
 # * (Skill 3) A Buzzrer should be used
 sk_buzzrer = PieceSkill("buzzrer", "piece", "buzzrer")
 
-# * (Skill 4) A Reed Switch should be used
+# * (Skill 4) A Switch should be used
+sk_switch = PieceSkill("switch", "piece", "switch")
+
+# * (Skill 5) A Reed Switch should be used
 sk_reed = PieceSkill("reed", "piece", "buzzrer")
 
 # * (Skill 5) A Push Button Switch should be used
