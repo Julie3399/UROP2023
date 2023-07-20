@@ -238,6 +238,33 @@ task16= Task(16,"mc_le_bu", ["mc", "led", "button"], [],
 		[1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 1 ],
 		"Build a circuit that blinks a light in the rythm of a song when a button is pressed")
 
-task15 = Task(15,"mc_le_re", ["mc", "led", "reed"], [],
+task17 = Task(17,"mc_le_re", ["mc", "led", "reed"], [],
 		[1, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 1 ],
 		"Build a circuit that blinks a light in the rythm of a song when a reed switch is turned on")
+
+
+
+
+
+
+#--------------
+task18 = Task(18,"fm_sp", ["fm", "speaker"], [],
+	    [0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1 ],
+		"Build a circuit that that you can listen to the FM radio via the Speaker")
+#--------------
+task19 = Task(18,"fm_sp_sw", ["fm", "speaker","switch"], [],
+	    [0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1 ],
+		"Build a circuit that that you can listen to the FM radio via the Speaker and off using a switch")
+task20 = Task(20,"fm_sp_re", ["fm", "speaker","reed"], [],
+	    [0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1 ],
+		"Build a circuit that that you can listen to the FM radio via the Speaker when a button is pressed")
+task21 = Task(21,"fm_buz", ["fm", "buzzrer"], [],
+	    [0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1 ],
+		"Build a circuit that that you can listen to the FM radio via the buzzrer")
+#--------------
+task22 = Task(22,"fm_buz_sw", ["fm", "buzzrer","switch"], [],
+	    [0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1 ],
+		"Build a circuit that that you can listen to the FM radio via the buzzrer and off using a switch")
+task23 = Task(23,"fm_buz_re", ["fm", "buzzrer","reed"], [],
+	    [0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1 ],
+		"Build a circuit that that you can listen to the FM radio via the buzzrer when a button is pressed")
