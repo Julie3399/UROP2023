@@ -171,7 +171,8 @@ closed_circuit = ClosingSkill("simple_closed", "closing")
 
 all_skills = [sk_led, sk_FM,sk_buzzrer,sk_switch, sk_reed, sk_button,sk_lamp, sk_battery, sk_speaker, sk_music, sk_motor,sk_cp, sk_dir_led, power_mc, signal_FM, closed_circuit]
 
-[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ],
+################################################
+
 
 task1 = Task(1,"sw_la", ["switch", "lamp"], [], 
 		[0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1 ],
@@ -213,3 +214,30 @@ task10 = Task(10,"mc_sp", ["mc", "speaker"], [],
 	    [0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 0, 1, 0, 0, 1 ],
 		"Build a circuit that plays music")
 
+task11 = Task(11,"mc_sp_sw", ["mc", "speaker", "switch"], [],
+		[0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 1, 0, 1, 0, 0, 1 ],
+		"Build a circuit that plays music when a switch is turned on")
+
+task12 = Task(12,"mc_sp_bu", ["mc", "speaker", "button"], [],
+		[0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 0, 1, 0, 1, 0, 0, 1 ],
+		"Build a circuit that plays music when a button is pressed")
+
+task13 = Task(13,"mc_sp_re", ["mc", "speaker", "reed"], [],
+		[0, 0, 0, 0, 1, 0, 0, 1, 1, 1, 0, 1, 0, 1, 0, 0, 1 ],
+		"Build a circuit that plays music when a reed switch is turned on")
+
+task14 = Task(14,"mc_le", ["mc", "led"], [],
+		[1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 1 ],
+		"Build a circuit that blinks a light in a rythm of a song")
+
+task15 = Task(15,"mc_le_sw", ["mc", "led", "switch"], [],
+		[1, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 1 ],
+		"Build a circuit that blinks a light in the rythm of a song when a switch is turned on")
+
+task16= Task(16,"mc_le_bu", ["mc", "led", "button"], [], 
+		[1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 1 ],
+		"Build a circuit that blinks a light in the rythm of a song when a button is pressed")
+
+task15 = Task(15,"mc_le_re", ["mc", "led", "reed"], [],
+		[1, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 1 ],
+		"Build a circuit that blinks a light in the rythm of a song when a reed switch is turned on")
