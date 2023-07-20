@@ -43,18 +43,10 @@ class Task():
 		self.instruction = instruction
 
 
+
+
+#------------------------------------------------------------------
 ## Piece Picking Skills
-
-#4) When a Resistor should be used 
-sk_resistor = PieceSkill("resistor","piece","resistor") 
-
-
-#6) When a switch should be used
-sk_switch = PieceSkill("switch","piece","switch") 
-
-
-
-
 
 # * (Skill 1) When a LED should be used
 sk_led = PieceSkill("led","piece","led") 
@@ -71,20 +63,116 @@ sk_switch = PieceSkill("switch", "piece", "switch")
 # * (Skill 5) A Reed Switch should be used
 sk_reed = PieceSkill("reed", "piece", "buzzrer")
 
-# * (Skill 5) A Push Button Switch should be used
+# * (Skill 6) A Push Button Switch should be used
 sk_button = PieceSkill("button","piece","button")
 
-# * (Skill 6) A Lamp should be used
+# * (Skill 7) A Lamp should be used
 sk_lamp = PieceSkill("lamp", "piece", "lamp")
 
-# * (Skill 7) A Battery should be used
+# * (Skill 8) A Battery should be used
 sk_battery = PieceSkill("battery", "piece", "button")
 
-# * (Skill 8) A Speaker should be used
+# * (Skill 9) A Speaker should be used
 sk_speaker = PieceSkill("speaker","piece","speaker") 
 
-# * (Skill 9) A IC-Music should be used
+# * (Skill 10) A IC-Music should be used
 sk_music = PieceSkill("music","piece","music") 
 
-# * (Skill 10) A Motor should be used
+# * (Skill 11) A Motor should be used
 sk_motor = PieceSkill("motor","piece","motor") 
+
+
+
+#------------------------------------------------------------------
+## Piece connecting skills
+
+# * (skill 12) How to Connect two pieces together
+sk_cp = ConnectPieces("connect", "connect_pieces")
+
+
+
+#------------------------------------------------------------------
+## Connection skills
+
+# * (skill 13) - Connect LED to Switch
+led_switch = ConnectionSkill("led_switch", "connection", "led", "switch")
+
+# * (skill 14) - Connect LED to Button
+led_button = ConnectionSkill("led_button", "connection", "led", "button")
+
+# * (skill 15) - Connect LED to Reed Switch
+led_reed = ConnectionSkill("led_mc", "connection", "led", "reed")
+
+led_motor = ConnectionSkill("led_motor", "connection", "led", "motor")
+
+# * (skill 16) - Connect Switch to Button
+switch_button = ConnectionSkill("switch_button", "connection", "switch", "button")
+
+# * (skill 17) - Connect Switch to Motor
+switch_motor = ConnectionSkill("switch_motor", "connection", "switch", "motor")
+
+# * (skill 18) - Connect Switch to Speaker
+switch_speaker = ConnectionSkill("switch_speaker", "connection", "switch", "speaker")
+
+# * (skill 19) - Connect Button to Motor
+button_motor = ConnectionSkill("button_motor", "connection", "button", "motor")
+
+# * (skill 20) - Connect Button to Speaker
+button_speaker = ConnectionSkill("button_speaker", "connection", "button", "speaker")
+
+# * (skill 21) - Connect Bulb to Switch
+bulb_switch = ConnectionSkill("bulb_switch", "connection", "bulb", "switch")
+
+# * (skill 22) - Connect Bulb to Button
+bulb_button = ConnectionSkill("bulb_reed", "connection", "bulb", "button")
+
+# * (skill 23) - Connect Bulb to Reed Switch
+bulb_reed = ConnectionSkill("bulb_reed", "connection", "bulb", "reed")
+
+# * (skill 24 ) - Connect Switch to MC
+switch_mc = ConnectionSkill("switch_mc", "connection", "switch", "mc")
+
+# * (skill 25 ) - Connect Button to MC
+button_mc = ConnectionSkill("button_mc", "connection", "button", "mc")
+
+# * (skill 26 ) - Connect Speaker to MC
+speaker_mc = ConnectionSkill("speaker_mc", "connection", "speaker", "mc")
+
+# * (skill 27 ) - Connect Speaker to FM
+speaker_fm = ConnectionSkill("speaker_fm", "connection", "speaker", "fm")
+
+
+
+
+
+
+
+#------------------------------------------------------------------
+## LED direction skills
+
+# * (skill 28) The correct directionality of an LED
+sk_dir_led = DirectionSkill("led_direc", "led")
+
+
+#------------------------------------------------------------------
+## High level skills
+
+# * (skill 29) How to power an MC
+power_mc = MCSkill("power", "mc", "power", "wire")
+
+# * (skill 30) How to connect the signal on the MC
+signal_mc = MCSkill("signal", "mc", "signal", "wire")
+
+# * (skill 31) How to use the trigger on the MC
+trigger_mc_motor = MCSkill("trigger", "mc", "trigger", "motor")
+
+# * (skill 32) How to use the hold on the MC
+hold_mc_button = MCSkill("hold", "mc", "hold", "button") 
+
+
+
+#------------------------------------------------------------------
+## Closing skills
+
+# * (skill 33) That the circuit should be a circuit
+closed_circuit = ClosingSkill("simple_closed", "closing")
