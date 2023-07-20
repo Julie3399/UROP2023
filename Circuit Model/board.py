@@ -6,7 +6,9 @@ import numpy as np
 letterToLocation = {}
 
 def whatAngle(boardBW):
-
+    '''
+    Return the angle of the board
+    '''
 	coords = np.column_stack(np.where(boardBW > 0))
 	angle = cv2.minAreaRect(coords)[-1]
 
