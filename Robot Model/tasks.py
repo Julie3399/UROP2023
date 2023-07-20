@@ -80,6 +80,12 @@ sk_music = PieceSkill("music","piece","music")
 
 # * (Skill 11) A Motor should be used
 sk_motor = PieceSkill("motor","piece","motor") 
+<<<<<<< HEAD
+
+
+################################################
+
+=======
 
 
 
@@ -176,3 +182,5 @@ hold_mc_button = MCSkill("hold", "mc", "hold", "button")
 
 # * (skill 33) That the circuit should be a circuit
 closed_circuit = ClosingSkill("simple_closed", "closing")
+
+>>>>>>> 44c36a83016f5b562cbe5f27f7854b0e41ee5eb1
