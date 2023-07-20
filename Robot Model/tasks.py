@@ -155,11 +155,11 @@ sk_dir_led = DirectionSkill("led_direc", "led")
 # * (skill 14) How to power an MC
 power_mc = MCSkill("power", "mc", "power", "wire")
 
-# * (skill 15) How to power an FM
-power_fm = MCSkill("power", "fm", "power", "wire")
+# * (skill 15) How to change the signal on the FM
+signal_FM = MCSkill("signal", "FM", "signal", "FM")
 
 # * (skill 16) How to change the signal on the FM
-signal_mc = MCSkill("signal", "fm", "signal", "wire")
+signal_FM = MCSkill("signal", "fm", "signal", "wire")
 
 #------------------------------------------------------------------
 ## Closing skills
@@ -169,7 +169,9 @@ closed_circuit = ClosingSkill("simple_closed", "closing")
 
 
 
-################################################
+all_skills = [sk_led, sk_FM,sk_buzzrer,sk_switch, sk_reed, sk_button,sk_lamp, sk_battery, sk_speaker, sk_music, sk_motor,sk_cp, sk_dir_led, power_mc, signal_FM, closed_circuit]
+
+
 
 task1 = Task(1,"sw_bu", ["switch", "lamp"], [], 
 		[1, 1, 1, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0 ],
