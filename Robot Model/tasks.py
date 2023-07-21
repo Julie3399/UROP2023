@@ -32,6 +32,11 @@ class ConnectPieces(Skill):
 	def __init__(self, name, skill_type):
 		Skill.__init__(self, name, skill_type)
 
+class GateSkill(Skill):	
+	def __init__(self,name, skill_type,gate):
+		Skill.__init__(self,name, skill_type)
+		self.gate = gate
+
 class Task():
 	def __init__(self,task_id,name, pieces, skills, action = [], instruction = ""):
 		self.id = task_id
@@ -167,7 +172,17 @@ signal_fm = MCSkill("signal", "fm", "signal", "wire")
 # * (skill 17) That the circuit should be a circuit
 closed_circuit = ClosingSkill("simple_closed", "closing")
 
+#------------------------------------------------------------------
+## Gate skills
 
+# * (skill 18) How to create an AND gate
+and_gate = GateSkill("and_gate", "gate", "and")
+
+# * (skill 19) How to create an OR gate
+or_gate = GateSkill("or_gate", "gate", "or")
+
+# * (skill 20) How to create an NOT gate
+not_gate = GateSkill("not_gate", "gate", "not")
 
 all_skills = [sk_led, sk_FM,sk_buzzrer,sk_switch, sk_reed, sk_button,sk_lamp, sk_battery, sk_speaker, sk_music, sk_motor,sk_cp, sk_dir_led, power_mc, signal_FM, closed_circuit]
 
