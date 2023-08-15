@@ -28,9 +28,11 @@ The skills to be evaluated are:
     *  (skill 19) How to create an OR gate
     *  (skill 20) How to create an NOT gate
 
-The following is the initial skill level for student A and B:
-sk_for_1 = [0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.]
-sk_for_2 = [0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.]
-
-if you think that their words indicate that they have certain skills then change the skill from 0 to 1:
+Through their conversation, please tell me if they apply certain skill independently or doing them together. If they apply certain skill together, please tell me their contribution to this skill in terms of percentage and tell me the reason.
+An example output should be:
+speaker 1 : skill 1 100%
+            skill 7 30%
+speaker 2 : skill 16 100%
+            skill 7 70%
+if you think that A applies skill 1 independently and then contribute to skill 7 for about 30% and B contribute to skill 7 for about 70% and independently applies the skill 16. All other skills that not be mentioned during their conversation may not be generated in the final output.
 
