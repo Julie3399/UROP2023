@@ -18,7 +18,7 @@ class ClosingSkill(Skill):
 	def __init__(self,name,skill_type):
 		Skill.__init__(self,name, skill_type)
 		
-class MusicSkill(Skill):	
+class MCSkill(Skill):	
 	def __init__(self,name, skill_type,port,piece):
 		Skill.__init__(self,name, skill_type)
 		self.port = port
@@ -59,8 +59,8 @@ sk_led = PieceSkill("led","piece","led")
 # * (Skill 2) When a FM Radio receiver should be used
 sk_FM = PieceSkill("FM", "piece","FM")
 
-# * (Skill 3) A Buzzrer should be used
-sk_buzzrer = PieceSkill("buzzrer", "piece", "buzzrer")
+# * (Skill 3) A buzzer should be used
+sk_buzzer = PieceSkill("buzzer", "piece", "buzzer")
 
 # * (Skill 4) A Switch should be used
 sk_switch = PieceSkill("switch", "piece", "switch")
@@ -69,7 +69,7 @@ sk_switch = PieceSkill("switch", "piece", "switch")
 sk_reed = PieceSkill("reed", "piece", "reed")
 
 # * (Skill 6) A Push Button Switch should be used
-sk_button = PieceSkill("button","piece","button")
+sk_button = PieceSkill("push button","piece","button")
 
 # * (Skill 7) A Lamp should be used
 sk_lamp = PieceSkill("lamp", "piece", "lamp")
@@ -81,7 +81,7 @@ sk_battery = PieceSkill("battery", "piece", "battery")
 sk_speaker = PieceSkill("speaker","piece","speaker") 
 
 # * (Skill 10) A IC-Music should be used
-sk_music = PieceSkill("music","piece","music") 
+sk_music = PieceSkill("mc","piece","mc") 
 
 # * (Skill 11) A Motor should be used
 sk_motor = PieceSkill("motor","piece","motor") 
@@ -184,7 +184,7 @@ or_gate = GateSkill("or_gate", "gate", "or")
 # * (skill 20) How to create an NOT gate
 not_gate = GateSkill("not_gate", "gate", "not")
 
-all_skills = [sk_led, sk_FM,sk_buzzrer,sk_switch, sk_reed, sk_button,sk_lamp, sk_battery, sk_speaker, sk_music, sk_motor,sk_cp, sk_dir_led, power_mc, signal_FM, closed_circuit,and_gate,or_gate,not_gate]
+all_skills = [sk_led, sk_FM,sk_buzzer,sk_switch, sk_reed, sk_button,sk_lamp, sk_battery, sk_speaker, sk_music, sk_motor,sk_cp, sk_dir_led, power_mc, power_fm, signal_fm, closed_circuit,and_gate,or_gate,not_gate]
 
 ################################################
 
@@ -193,7 +193,7 @@ task1 = Task(1,"sw_la", ["switch", "lamp"], [],
 		[0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0],
 		"Build a circuit that you can turn a light on and off using a switch")
 
-task2 = Task(2,"bu_la", ["button", "lamp"], [],
+task2 = Task(2,"bu_la", ["push button", "lamp"], [],
 		[0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0 ],
 		"Build a circuit that you can turn a light on and off using a button")
 
@@ -205,7 +205,7 @@ task4 = Task(4,"sw_mo", ["switch", "motor"], [],
 		[0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0 ],
 		"Build a circuit that you can turn a motor on and off using a switch")
 
-task5 = Task(5,"bu_mo", ["button", "motor"], [],
+task5 = Task(5,"bu_mo", ["push button", "motor"], [],
 		[0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0 ],
 		"Build a circuit that you can turn a motor on and off using a switch")
 
@@ -233,7 +233,7 @@ task11 = Task(11,"mc_sp_sw", ["mc", "speaker", "switch"], [],
 		[0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0 ],
 		"Build a circuit that plays music when a switch is turned on")
 
-task12 = Task(12,"mc_sp_bu", ["mc", "speaker", "button"], [],
+task12 = Task(12,"mc_sp_bu", ["mc", "speaker", "push button"], [],
 		[0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0 ],
 		"Build a circuit that plays music when a button is pressed")
 
@@ -249,7 +249,7 @@ task15 = Task(15,"mc_le_sw", ["mc", "led", "switch"], [],
 		[1, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 1, 0, 0, 0 ],
 		"Build a circuit that blinks a light in the rythm of a song when a switch is turned on")
 
-task16= Task(16,"mc_le_bu", ["mc", "led", "button"], [], 
+task16= Task(16,"mc_le_bu", ["mc", "led", "push button"], [], 
 		[1, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 1, 0, 0, 0],
 		"Build a circuit that blinks a light in the rythm of a song when a button is pressed")
 
@@ -266,41 +266,46 @@ task18 = Task(18,"fm_sp", ["fm", "speaker"], [],
 task19 = Task(18,"fm_sp_sw", ["fm", "speaker","switch"], [],
 	    [0, 1, 0, 1, 0, 0, 0, 1, 1, 0, 0, 1, 0, 0, 1, 1, 1, 0, 0, 0 ],
 		"Build a circuit that that you can listen to the FM radio via the Speaker when a switch is turned on")
-task20 = Task(20,"fm_sp_bu", ["fm", "speaker","button"], [],
+task20 = Task(20,"fm_sp_bu", ["fm", "speaker","push button"], [],
 	    [0, 1, 0, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 0, 1, 1, 1, 0, 0, 0 ],
 		"Build a circuit that that you can listen to the FM radio via the Speaker when a button is pressed")
-task21 = Task(21,"fm_buz", ["fm", "buzzrer"], [],
+task21 = Task(21,"fm_buz", ["fm", "buzzer"], [],
 	    [0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 1, 1, 0, 0, 0 ],
-		"Build a circuit that that you can listen to the FM radio via the buzzrer")
+		"Build a circuit that that you can listen to the FM radio via the buzzer")
 #--------------
-task22 = Task(22,"fm_buz_sw", ["fm", "buzzrer","switch"], [],
+task22 = Task(22,"fm_buz_sw", ["fm", "buzzer","switch"], [],
 	    [0, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 1, 1, 0, 0, 0 ],
-		"Build a circuit that that you can listen to the FM radio via the buzzrer when a switch is turned on")
-task23 = Task(23,"fm_buz_bu", ["fm", "buzzrer","button"], [],
+		"Build a circuit that that you can listen to the FM radio via the buzzer when a switch is turned on")
+task23 = Task(23,"fm_buz_bu", ["fm", "buzzer","push button"], [],
 	    [0, 1, 1, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 1, 1, 1, 0, 0, 0 ],
-		"Build a circuit that that you can listen to the FM radio via the buzzrer when a button is pressed")
+		"Build a circuit that that you can listen to the FM radio via the buzzer when a button is pressed")
 
-
-task24 = Task(24,"sw_bu_le", ["switch","button","led"], [],
+# AND
+task24 = Task(24,"sw_bu_le", ["switch","push button","led"], [],
 		[1, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0 ],
 		"Build a circuit that that the led lights only when both switch and push button switch is closed")
 
-task25 = Task(25,"sw_bu_le", ["switch","button","led"], [],
+# OR
+task25 = Task(25,"sw_bu_le", ["switch","push button","led"], [],
 		[1, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0 ],
 		"Build a circuit that that the led lights only when either switch or push button switch is closed")
 
+# NOT
 task26 = Task(26,"sw_not_le", ["switch","led"], [],
 		[1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 1 ],
 		"Build a circuit that that the led lights when the switch is not closed but not light when the switch is closed")
 
-task27 = Task(27,"sw_bu_la", ["switch","button","lamp"], [],
+# AND
+task27 = Task(27,"sw_bu_la", ["switch","push button","lamp"], [],
 		[0, 0, 0, 1, 0, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0 ],
 		"Build a circuit that that the lamp lights only when both switch and push button switch is closed")
 
-task28 = Task(28,"sw_bu_la", ["switch","button","lamp"], [],
+# OR
+task28 = Task(28,"sw_bu_la", ["switch","push button","lamp"], [],
 		[0, 0, 0, 1, 0, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 0 ],
 		"Build a circuit that that the lamp lights only when either switch or push button switch is closed")
 
+# NOT
 task29 = Task(29,"sw_not_la", ["switch","lamp"], [],
 		[0, 0, 0, 1, 0, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1 ],
 		"Build a circuit that that the lamp lights when the switch is not closed but not light when the switch is closed")
