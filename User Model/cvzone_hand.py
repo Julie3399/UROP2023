@@ -64,7 +64,6 @@ class HandDetector:
             for handType, handLms in zip(self.results.multi_handedness, self.results.multi_hand_landmarks):
                 gesture = self.get_gesture(handLms)
                 mp.solutions.drawing_utils.draw_landmarks(img, handLms, self.mpHands.HAND_CONNECTIONS)
-                # cv2.putText(img, gesture, (10, 70), cv2.FONT_HERSHEY_PLAIN, 3, (0, 255, 0), 3)
                 myHand = {}
                 ## lmList
                 mylmList = []
@@ -88,14 +87,26 @@ class HandDetector:
                 myHand["bbox"] = bbox
                 myHand["center"] = (cx, cy)
 
-                if flipType:
-                    if handType.classification[0].label == "Right":
-                        myHand["type"] = "Left"
-                    else:
-                        myHand["type"] = "Right"
+                # sit side by side
+                if myHand['center'][0]<w/2:
+                    myHand["type"] = "ID: 0"
                 else:
-                    myHand["type"] = handType.classification[0].label
-                allHands.append(myHand)
+                    myHand["type"] = "ID: 1"
+
+                # sit in front of each other
+                # if myHand['center'][1]<h/2:
+                #     myHand["type"] = "ID: 0"
+                # else:
+                #     myHand["type"] = "ID: 1"
+
+                # if flipType:
+                #     if handType.classification[0].label == "Right":
+                #         myHand["type"] = "Left"
+                #     else:
+                #         myHand["type"] = "Right"
+                # else:
+                #     myHand["type"] = handType.classification[0].label
+                # allHands.append(myHand)
 
                 ## draw
                 if draw:
