@@ -69,6 +69,8 @@ class HandDetector:
                 mylmList = []
                 xList = []
                 yList = []
+                thumb_tip_list = []
+                index_tip_list = []
                 for id, lm in enumerate(handLms.landmark):
                     px, py, pz = int(lm.x * w), int(lm.y * h), int(lm.z * w)
                     mylmList.append([px, py, pz])
@@ -82,18 +84,17 @@ class HandDetector:
                 bbox = xmin, ymin, boxW, boxH
                 cx, cy = bbox[0] + (bbox[2] // 2), \
                          bbox[1] + (bbox[3] // 2)
-
                 myHand["lmList"] = mylmList
                 myHand["bbox"] = bbox
                 myHand["center"] = (cx, cy)
 
                 # sit side by side
-                if myHand['center'][0]<w/2:
-                    myHand["type"] = "ID: 0"
-                else:
-                    myHand["type"] = "ID: 1"
+                # if myHand['center'][0]<w/2:
+                #     myHand["type"] = "ID: 0"
+                # else:
+                #     myHand["type"] = "ID: 1"
 
-                # sit in front of each other
+                # sit in front of each other (version 1: divide screen into two parts)
                 # if myHand['center'][1]<h/2:
                 #     myHand["type"] = "ID: 0"
                 # else:
@@ -106,7 +107,15 @@ class HandDetector:
                 #         myHand["type"] = "Right"
                 # else:
                 #     myHand["type"] = handType.classification[0].label
-                # allHands.append(myHand)
+                
+                # sit in front of each other (version 2: using direction of fingers, i.e., wrist compared to middle finger tip)
+                if myHand['lmList'][0][0]< myHand['lmList'][12][0]: # use x-coordinate if hands from left/right, use y-coordinate if hands from up/down
+                    myHand["type"] = "ID: 0"
+                else:
+                    myHand["type"] = "ID: 1"
+                
+                
+                allHands.append(myHand)
 
                 ## draw
                 if draw:
