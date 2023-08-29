@@ -10,3 +10,14 @@ Here's an introduction to files in this folder:
 ```python
 all_skills = [sk_led, sk_FM,sk_buzzer,sk_switch, sk_reed, sk_button,sk_lamp, sk_battery, sk_speaker, sk_music, sk_motor,sk_cp, sk_dir_led, power_mc, signal_mc, power_fm, signal_fm, closed_circuit,and_gate,or_gate,not_gate]
 ```
+which represents:
+```python
+all_skills = [skill_1, skill_2, skill_3, ..., skill_21]
+```
+We will use this to represent the skills that will be used in each task in the following setting:
+```python
+task1 = Task(1,"sw_la", ["switch", "lamp"], [], 
+		[0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0],
+		"Build a circuit that you can turn a light on and off using a switch")
+```
+The above code is for task 1: Build a circuit that you can turn a light on and off using a switch. As you can see from the vector in the above code, 0 represents that this skill will not be used during this task while 1 represents that this skill will be tested. `sw_la` will be the name of the task and the following list indicates the electronic components that will be used during this task.
