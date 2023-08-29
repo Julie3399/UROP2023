@@ -351,3 +351,23 @@ def check_changes(previous_data,data,output):
     added = [(item,o) for item,o in zip(data,output) if item not in previous_data]
     removed = [item for item in previous_data if item not in data]
     return added,removed
+
+def find_person_id(hand_history, center_piece):
+    person_id = None
+    center_piece = ((output_add[2]+output_add[0])//2,(output_add[3]+output_add[1])//2)
+
+    if hand_history.get('ID: 1') or hand_history.get('ID: 0'):
+        for hand_center in hand_history.get('ID: 1', []):
+            if (hand_center[0] - center_piece[0] < 5 and hand_center[1] - center_piece[1] < 20) or \
+               (hand_center[0] - center_piece[0] < 20 and hand_center[1] - center_piece[1] < 5):
+                person_id = 'ID: 1'
+                break
+        
+        if not person_id:
+            for hand_center in hand_history.get('ID: 0', []):
+                if (hand_center[0] - center_piece[0] < 5 and hand_center[1] - center_piece[1] < 20) or \
+                   (hand_center[0] - center_piece[0] < 20 and hand_center[1] - center_piece[1] < 5):
+                    person_id = 'ID: 0'
+                    break
+
+        return person_id
