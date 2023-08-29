@@ -324,6 +324,7 @@ def add_new_piece(data,output,frame_tilt,angle,board,all_pieces):
     return board,all_pieces
 
 def initialize_board():
+    
     board = pieces.Board("b1", 13, 15)
     all_pieces = []
     previous_data = []
