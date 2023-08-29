@@ -323,6 +323,15 @@ def add_new_piece(data,output,frame_tilt,angle,board,all_pieces):
         all_pieces.append(fm)
     return board,all_pieces
 
+def initialize_board():
+    board = pieces.Board("b1", 13, 15)
+    all_pieces = []
+    previous_data = []
+    hand_history = collections.defaultdict(list)
+    output_get_pegs = None
+    person_id = None
+
+    return board, all_pieces, previous_data, hand_history, output_get_pegs, person_id
 
 def display_attributes(in_class):
     """
@@ -352,7 +361,7 @@ def check_changes(previous_data,data,output):
     removed = [item for item in previous_data if item not in data]
     return added,removed
 
-def find_person_id(hand_history, center_piece):
+def find_person_id(hand_history, output_add):
     person_id = None
     center_piece = ((output_add[2]+output_add[0])//2,(output_add[3]+output_add[1])//2)
 
