@@ -4,6 +4,7 @@ import connections
 import pieces_location
 import cv2
 import numpy as np
+import collections
 
 def correct_size(w):
     """

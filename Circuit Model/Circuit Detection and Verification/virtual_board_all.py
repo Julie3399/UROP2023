@@ -6,15 +6,6 @@ import time
 import mediapipe as mp
 import os
 
-# crop frame to focus on board
-def process_frame(frame, crop_x=760, crop_y=250, crop_width=450, crop_height=500):
-    
-    frame_for_veri = frame[crop_y:crop_y + crop_height, crop_x:crop_x + crop_width]
-    frame_for_hand = frame[crop_y:crop_y + crop_height, crop_x:crop_x + crop_width + 150]
-    rotated_frame = cv2.rotate(frame_for_veri, cv2.ROTATE_90_CLOCKWISE)
-    
-    return rotated_frame, frame_for_hand
-
 
 def whatAngle(boardBW):
     
