@@ -100,59 +100,6 @@ sk_motor = PieceSkill("motor","piece","motor")
 sk_cp = ConnectPieces("connect", "connect_pieces")
 
 
-
-# #------------------------------------------------------------------
-# ## Connection skills
-
-# # * (skill 13) - Connect LED to Switch
-# led_switch = ConnectionSkill("led_switch", "connection", "led", "switch")
-
-# # * (skill 14) - Connect LED to Button
-# led_button = ConnectionSkill("led_button", "connection", "led", "button")
-
-# # * (skill 15) - Connect LED to Reed Switch
-# led_reed = ConnectionSkill("led_mc", "connection", "led", "reed")
-
-# led_motor = ConnectionSkill("led_motor", "connection", "led", "motor")
-
-# # * (skill 16) - Connect Switch to Button
-# switch_button = ConnectionSkill("switch_button", "connection", "switch", "button")
-
-# # * (skill 17) - Connect Switch to Motor
-# switch_motor = ConnectionSkill("switch_motor", "connection", "switch", "motor")
-
-# # * (skill 18) - Connect Switch to Speaker
-# switch_speaker = ConnectionSkill("switch_speaker", "connection", "switch", "speaker")
-
-# # * (skill 19) - Connect Button to Motor
-# button_motor = ConnectionSkill("button_motor", "connection", "button", "motor")
-
-# # * (skill 20) - Connect Button to Speaker
-# button_speaker = ConnectionSkill("button_speaker", "connection", "button", "speaker")
-
-# # * (skill 21) - Connect Bulb to Switch
-# bulb_switch = ConnectionSkill("bulb_switch", "connection", "bulb", "switch")
-
-# # * (skill 22) - Connect Bulb to Button
-# bulb_button = ConnectionSkill("bulb_reed", "connection", "bulb", "button")
-
-# # * (skill 23) - Connect Bulb to Reed Switch
-# bulb_reed = ConnectionSkill("bulb_reed", "connection", "bulb", "reed")
-
-# # * (skill 24 ) - Connect Switch to MC
-# switch_mc = ConnectionSkill("switch_mc", "connection", "switch", "mc")
-
-# # * (skill 25 ) - Connect Button to MC
-# button_mc = ConnectionSkill("button_mc", "connection", "button", "mc")
-
-# # * (skill 26 ) - Connect Speaker to MC
-# speaker_mc = ConnectionSkill("speaker_mc", "connection", "speaker", "mc")
-
-# # * (skill 27 ) - Connect Speaker to FM
-# speaker_fm = ConnectionSkill("speaker_fm", "connection", "speaker", "fm")
-
-
-
 #------------------------------------------------------------------
 ## LED direction skills
 
