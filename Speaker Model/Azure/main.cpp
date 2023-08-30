@@ -24,8 +24,8 @@ void SpeakerIdentify(shared_ptr<VoiceProfile> profile, shared_ptr<SpeakerRecogni
 
 shared_ptr<SpeechConfig> GetSpeechConfig()
 {
-    auto subscription_key = "7c1a8e3edbfb4a2b8b2cc326e37a375f";
-    auto region = "eastus";
+    auto subscription_key = "Your-Subsciprtion-Key";
+    auto region = "Set-Your-Region";
     auto config = SpeechConfig::FromSubscription(subscription_key, region);
     return config;
 }
