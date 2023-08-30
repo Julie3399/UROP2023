@@ -1,3 +1,8 @@
+// Be careful with the <speechapi_cxx.h>, it should be include in the `include` folder
+// This file has been successfully compiled, and it is for speaker recognition.
+// Our idea is to record the voice information throught a 1 or 2 minutes self-intro of the participants
+// then do the recognition in real time.
+
 #include <iostream>
 #include <stdexcept>
 // Note: Install the NuGet package Microsoft.CognitiveServices.Speech.
