@@ -16,7 +16,10 @@ Robot tutoring in circuit building addresses these challenges by introducing spe
 
 ## Circuit Model
 
-https://github.com/Julie3399/UROP_Julie/assets/85987946/932bac3f-123a-4f1a-86b4-dd42d59adfb6
+
+https://github.com/Julie3399/UROP2023/assets/85987946/37b853e2-d17a-4372-9da0-ee934f404ef5
+
+
 
 The video sequence showcases different stages of the process, ordered from top to bottom and right to left: "Raw Input Video," "Video with Hand Detection," "YOLO Object Detection on Video," "Board Model," and "Output from the Verification Process."
 
@@ -31,12 +34,20 @@ We have developed two models using MediaPipe (Website where more information can
 - Its remarkable stability extends to scenarios involving shifts in hand position and instances of partial overlap.
 - In Demo Video 1, we demonstrate its adeptness at distinguishing changes in both hand position and finger orientation. Meanwhile, in Demo Video 2, we shows its ability to deal with situation with overlapping hands.
 
-https://github.com/Julie3399/UROP_Julie/assets/85987946/46697bf8-cac4-450c-b7fb-d7e076763fb4 
 
-https://github.com/Julie3399/UROP_Julie/assets/85987946/71e2ac00-7591-401d-a5b4-c6d81306bd32
+https://github.com/Julie3399/UROP2023/assets/85987946/5f9f8a01-020c-4af7-aaad-a6fb2ebd7a5f
+
+
+https://github.com/Julie3399/UROP2023/assets/85987946/e6c8381b-e34e-4729-8b02-ebd173a0b33d
+
+
+
 
 ## Holistic Model:
 - Our Holistic Model is built to provide a comprehensive understanding of human subjects. While there are opportunities for performance enhancement (stability in multiple person detection awaiting for improvement), the model's potential is substantial. 
 - It possesses the capacity to comprehend intricate details like facial expressions and body language, crucial factors in assessing emotions and confidence levels. This enhances our ability to more accurately estimate skill levels of the users.
 
-https://github.com/Julie3399/UROP_Julie/assets/85987946/3d5b70cc-5a44-4c98-8541-7cf96546c0c5
+
+https://github.com/Julie3399/UROP2023/assets/85987946/77953812-3f81-488b-8494-8d8bc74c6786
+
+
